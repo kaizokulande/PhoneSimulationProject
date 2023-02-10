@@ -1,0 +1,25 @@
+
+<head>
+	<title>LOGIN ADMIN</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<div class="container">
+	<div class="login-content">
+		<form action="index.html">
+			<h2 class="title">LOGIN ADMIN</h2>
+			<div class="input-div one">
+				<div class="div">           		   		
+					<input type="text" name="admin" class="input" value="ADMIN">
+				</div>
+			</div>
+			<div class="input-div pass">	
+				<div class="div">        
+					<input type="password" name="password" class="input" [(ngModel)]= "password" required/>
+				</div>
+			</div>
+			<input type="submit" (click) = "checkAdmincomponent()" class="btn">
+		</form>
+	</div>
+</div>
+

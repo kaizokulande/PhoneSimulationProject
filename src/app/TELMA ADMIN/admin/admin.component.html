@@ -1,0 +1,137 @@
+
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>TELEPHONIE</title>
+  </head>
+<body id="body">
+    <div class="container">
+      <nav class="navbar">
+        <div class="nav_icon" onclick="toggleSidebar()">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+        <div class="navbar__left">
+          <a href="#">HOME</a>
+          <a  href="offreAdmin">GENERER UNE OFFRE</a>
+          <a href="validationDepot">VALIDER DES DEPOTS</a>
+          <a  href="#">Admin</a>
+        </div>
+    </nav>
+    <div> 
+    </div>
+  <main>
+    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tr>
+        <td>
+           <table cellspacing="0" cellpadding="1"  width="100%" >
+             <tr style="color:#ffffff;background-color:#000000">
+                <th width="2%">#</th>
+                <th  width="5%">NOM</th>
+                <th width="5%">NUMERO</th>
+                <th width="5%">ARGENT</th>
+                <th width="5%">OFFRE</th>
+                <th width="5%">CREDIT</th>
+                <th width="5%">APPEL</th>
+                <th width="5%">DEMANDE EN ATTENTE</th>                
+             </tr>
+           </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+           <div style="width:100%; height:500px; overflow:auto;">
+             <table cellspacing="0" cellpadding="0" border="1" width="100%"  >
+               <tr *ngFor="let dataBackOffice of back; let i =index " >
+                 <td width="2%">{{i}}</td>
+                 <td width="2%">{{dataBackOffice.name}}</td>
+                 <td width="2%">{{dataBackOffice.numero}}</td>                
+                 <td width="2%">{{dataBackOffice.soldea}}</td>
+                 <td width="2%">{{dataBackOffice.nameoffre}}</td>
+                 <td width="3%">{{dataBackOffice.soldec}}</td>
+                 <td width="3%">{{dataBackOffice.duree}}</td>
+                 <td width="3%">DEPOT</td>
+               </tr>               
+             </table>  
+           </div>
+        </td>
+      </tr>
+    </table>
+    <hr>
+    <br><br>
+    <br><br>
+<!-- STATIQTIQUE TELMA ADMIN  -->
+    <div class="main__container">
+      <div class="main__cards">
+        <div class="card">
+          <i class="fa fa-user-o fa-2x"></i>
+          <div class="card_inner">
+            <p>Nombres d'utilsateurs</p>
+            <span class="font-bold text-title">{{nombreUtilisateurs}}</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <i class="fa fa-money fa-2x"></i>
+          <div class="card_inner">
+            <p>Argent deposer</p><br><br>
+            <span class="font-bold text-title">{{sommeArgentDeposer}} </span>ariary
+          </div>
+        </div>
+
+        <div class="card">
+          <i class="fa fa-phone fa-2x text-yellow"></i>
+          <div class="card_inner">
+            <p>Temps appel passer</p><br><br>
+            <span class="font-bold text-title">{{sommeTempsAppel}} </span> minutes
+          </div>
+        </div>
+
+        <div class="card">
+          <i class="fa fa-line-chart fa-2x"></i>
+          <div class="card_inner">
+            <p>Soldes vendus</p><br><br>
+            <span class="font-bold text-title">{{nombreOffreVendu}} </span>
+          </div>
+        </div>
+      </div>
+    </div>
+<hr>
+<!-- OFFRE -->
+<div class="main__container">
+  <h1>LISTES OFFRES EXISTANTES :</h1>
+    <div class="main__cards" >
+      <div class="card"  *ngFor="let offre of listeOfOffre ">
+      <i class="fa fa-user-o fa-2x"></i>
+      <div class="card_inner">
+          <p name="name_telma_offre" [(ngModel)]="name_telma_offre">{{offre.nameTelmaOffre}}</p>
+          <span class="font-bold text-title">{{offre.prixTelmaOffre}}</span>
+          <button (click) = "deleteOffre()">supprimer</button>          
+      </div>
+    </div>
+  </div>  
+</div>
+
+
+  </main>
+ 
+    <div>    
+        <div class="main__title">
+          <div class="main__greeting">
+            <h1>TELMA OPERATEUR</h1>
+            <p>BIENVENUE SUR LA PAGE D 'ADMINISTRATEUR</p>
+          </div>
+        </div> 
+        <br><br><br>
+        <div style="margin-left: 10%;">
+            <button class="button-secondary"><a style="text-decoration: none;" href="#">LISTE CLIENT</a></button> 
+            <br><br><br>
+            <button class="button-secondary"><a style="text-decoration: none;" href="#">LISTE APPEL</a> </button>
+            <br><br><br>
+            <button class="button-secondary"><a style="text-decoration: none;" href="#">LISTE DEPOT</a></button> 
+            <br><br><br>
+           <button class="button-error"><a style="text-decoration: none;" [routerLink]="['/index']">Log out</a></button>
+        </div>
+    </div> 
+</div>
+</body>
+ 

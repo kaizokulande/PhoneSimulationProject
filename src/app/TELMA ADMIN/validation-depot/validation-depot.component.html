@@ -1,0 +1,22 @@
+<div id="container">
+    <h2>VALIDATION DE DEPOT MOBILE MONEY <small>Telma Admin</small></h2>
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">#</div>
+        <div class="col col-2">Numero</div>
+        <div class="col col-3">Etat</div>
+        <div class="col col-4">Solde deposer</div>
+        <div class="col col-5">Action</div>
+      </li>
+     
+      <li *ngFor="let data of listeOfTransactionns " class="table-row">
+        <div class="col col-1" >{{data.idtransaction}}</div>
+        <div class="col col-2" >{{data.numero}}</div>
+        <div class="col col-3" >{{data.validation}}</div>
+        <div class="col col-4" >{{data.solde}}</div>
+        <div class="col col-5" >
+            <button class="logout-btn">Valider</button>
+        </div>
+      </li>    
+    </ul>
+</div>

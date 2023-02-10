@@ -1,0 +1,236 @@
+TO DO LIST: 
+    A APPRENDRE : 
+        ☐ Déployement de WEB JAVA sur Heroku (Non Prioritaire) -> Semaine du 30/03/2021
+        ☐ REST Web Service in JAVA (Important)
+        ☐ Utilisation de CSS GRID pour le design 
+        ☐ Angular pour Affichage FRONT 
+        ☐ Learn Base MONGO DB 
+
+    FONCTIONNALITES : 
+        ☐ COTE MOBILE : 
+            ☐ Simulation Appel (Durée, Opérateur,...)
+            ☐ Achat Offre Via Mobile Money
+            ☐ Faire Dépôt sur MobileMoney
+            ☐ Mon Compte
+
+        ☐ Front OFFICE : (WEB)
+            ☐ Inscription et LOGIN
+            ☐ Voir Historique des Appels 
+
+        ☐ Back Office : (WEB ET MOBILE)
+            ☐ Gestion des éléments nécessaires (Offre,Crédit,...)
+            ☐ Tableau Statistiques
+            ☐ Validation dépôt mobile money
+
+    ARCHITECTURE: 
+        ☐ Angular pour Affichage FRONT
+        ☐ Application Mobile 
+            ☐ Appli Mobile (Ionic,Native,...) 
+            ☐ Récupération des infos du cloud pour les afficher
+            ☐ Mise à jour des données du cloud
+            ☐ Utilisation de l'architecture Web Service
+
+            CONTRAINTES TECHNIQUES: 
+    ☐ Web Service ou code Métier JAVA 
+    ☐ 2Bases : 
+        ☐ Base Relationnelle = POSTGRESQL pour Web Service Java 
+        ☐ Base Non Relationnelle = MongoDB Côté Mobile pour Ionic  
+    ☐
+
+☐ Côté Affichage : 
+    Angular : CSS grid ou flex
+    NB: Déployer en ligne
+PLATEFORMES: HEROKU
+
+    A FAIRE : 
+        ☐ FRONT OFFICE :
+
+            ☐ INSCRIPTION ET LOGIN:
+
+            COTE BASE :                                                 
+            ✔ Création Table Utilisateur champs :  id,nom,mdp,adresse,datenaissance 
+                
+            COTE METIER: (Utilisation de Web Service method POST)                                       
+            ☐ Création d'une fonction verifyUser(email,mdp)                                    
+            permettant de vérifier si l'utilisateur existe                                                                                                     
+            vraiment                                                                                   
+            ☐ Création d'une fonction Inscription(nom,mdp,adresse,num)                                                                                                                 
+            
+            COTE AFFICHAGE:
+            ☐ Utilisation de CSS GRID ou FLEX
+            ☐ Formulaire Login 
+            2 inputs EMAIL et MDP 
+            2cas : -> vers Accueil si 
+            bouton Connexion -> Traitement ->
+            -> en cas d'erreur Index
+
+
+            ☐ HISTORIQUE DES APPELS (Listes des Appels Entrants et Sortants de l'Utilisateur):  
+            
+            COTE BASE :                                                 COTE METIER :                                                                               COTE AFFICHAGE : 
+            ☐ Création table Appel                                     ☐ Création d'une fonction Appel[] findAllAppel(id_utilisateur)                              Tableau avec la liste des appels 
+            champs : id,id_utilisateur, id_type_appel,                  permettant d'afficher la liste des appels entrants et sortants                              durée, numéroAppel,type entrant 
+            numero,duree_appel, fonction                                de l'utilisateur                                                                            ou sortant
+            ☐ Création table Répertoire
+            id_Utilisateur,numero_Personne,nom_Personne,
+            
+
+        ☐ COTE MOBILE : 
+            ☐ Simulation Appel 
+
+            ☐ Achat Via Mobile Money : 
+            
+            COTE BASE :                                                 COTE METIER :                                                                           COTE AFFICHAGE:
+        ☐ Création table CompteMobileMoney                             ☐ Création d'une fonction verifySolde                                                  Menu Selected 
+        champs : id_Compte, id_Utilisateur,codeSecret                     3cas : si solde vide -> Faire dépôt                                                     Offre ->
+                                                                                sinon solde < montant_offre -> Dépôt                                            OneNight 1000Ar
+                                                                                sinon solde >= montant_offre ->                                                 Valider choix
+                                                                                Achat OFFRE OK + frais d'Achat
+
+            ☐  Faire dépôt sur MobileMoney:
+            
+            COTE BASE :                                                 COTE METIER :                                                                       COTE AFFICHAGE:
+                ☐ Création table Type_Mouvement                        ☐ Création fonction InsertMouvement                                                formulaire : 
+                id_TM,nom_M                                             Insertion Mouvement sur CompteMobileMoney                                           input Montant , date et heure dépôt
+                ☐ Création table Mouvement,                            de l'utilisateur
+                id_M,date_M,montant,id_typeM,
+                id_Compte(reference CompteMobileMoney) 
+
+            ☐ Mon Compte: 
+            
+            COTE BASE :                                                 COTE METIER :                                                                   COTE AFFICHAGE:
+                ☐ Solde                                                 ☐ Création d'une fonction getSolde()                                          Bouton Compte ->
+                                                                        permettant d'avoir le Solde de mon compte                                      Listes: - solde 
+                                                                        en cours                                                                               - mes mouvements
+
+        ☐ BACK-OFFICE : 
+            ☐ Gestion des éléments nécessaires : 
+                GESTION OFFRE : 
+                    
+
+                GESTION CREDIT :
+
+             
+            ☐ Validation Dépôt Mobile Money : entrer de Code Secret 
+                ☐ Si le code secret est bien le code secret de l'utilisateur
+                    Alors Déposition Avec Success
+                ☐ Sinon dans le cas contraire Déposition Echoué  
+
+            ☐ Tableau Statistique :
+
+            ☐ Appel :
+
+            DEROULEMENT : 
+                ☐ Répertoire : lise de repertoire d'Appel de l'utilisateur
+                ☐ Bouton Contacter
+                ☐ Saisie Date et Heure Appel Debut et Fin
+                ☐ Calcul Durée d'Appel 
+                ☐ 1Ar -> Même Opérateur (Telma)
+                   3Ar -> Autres Opérateurs (Airtel et Orange )
+            
+            COTE BASE :                                             COTE METIER :                                               COTE AFFICHAGE:
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    THEME 1:  
+    Système de téléphonie mobile = Appel et Mobile Money (Obligatoire)
+    Fonctionnalités Minimales : 
+        - BACK-OFFICE : (COTE WEB SERVICE) est web service ou coter web et coter mobile
+             1) Gestion des éléments nécessaires:
+                ☐ Boutton voir Offre :
+                on a la liste des offre que j'ai utiliser 
+                ☐ Bouton voir Crédit :
+                on a notre credit avec date d'expiration : ex: 
+                    120 ar validable jusk 2021/01/12
+
+             2) Tableau de Statistique : 
+
+             3) Validation de dépôt Mobile Money:  
+             vous vouler faire un depot de 200 ar sur le compte VAZA: vous le vous valider ok ou no
+                
+        - COTE FRONT-END WEB : 
+            1)Inscription et Login : 
+            2) Voir Historique d'Appel : 
+                entrant et sortant
+                
+                
+THEME 2:
+        - COTE MOBILE :
+            1) Simuler Appel (durer,operateur): 
+                on a la list des appel: nom user,date ,durer dernier mouvement,numero de operateur  avec avec lien du numero. 
+                Si on click on a historique des appels entrant et sortant avec la durer et la date pour chaque mouvement d'appel
+
+            2) Acheter offre via mobile money:
+                on a la list des offre: ex:
+                    1- Achat MORA (VOIX-SMS-INTERNET)
+                    2- Achat MORA (VOIX-SMS-INTERNET)   
+               Si on clik sur 1 on a:
+                Sur Achat MORA:
+                    1-MORA 500(500 ar)
+                    2-MORA ONE(1000 ar )
+                    
+                    Si on clikc sur lune des offre existant, on a ex:
+                        Pour Confirmer le paiement de l'offre MORA 500 via Mvola d'un montant de 500 ar,Entrer code secret: avec formulaire pour saisir le code et valider
+                        si confirmer on faire un retrai du montant de loffre dans le compte mobile money et on augement notre credit
+            
+            3) Faire un depot mobile money:
+                
+            3) Mon compte:
+
+ ARCHITECTURE:
+    
+            CLOUD:
+                ☐ Site en ligne - Front Office :
+                    Web Angular
+                ☐ Back Office : Web Service JAVA
+                ☐ Service 
+                ☐ Login 
+                ☐ Angular 
+                
+            APPLICATION MOBILE : 
+                ☐ Application Mobile (Ionic,Native,...)
+                ☐ Récuperer les infos du cloud pour les afficher
+                ☐ Mise à jour des données du cloud 
+                ☐ Utiliser l'architecture Web 
+                
+MAQUETTE : 
+    Photoshop  
+
+Simulation Appel : 
+    10 min crédit 5Min -> Misaina kely 
+
+    Maven

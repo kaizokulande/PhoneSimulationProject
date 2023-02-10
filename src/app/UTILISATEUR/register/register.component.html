@@ -1,0 +1,34 @@
+<div class="app-main__outer">
+    <div class="app-main__inner">
+        <div class="form"> 
+            <div class="header">
+                <h2>INSCRIPTION</h2>
+            </div>
+            <form #f="ngForm" (ngSubmit)="onSubmit()">
+                <div class="nom-input">
+                    <div class="full-width" appearance="outline">
+                        <label>Nom :</label>
+                        <input type="text" name="name" [(ngModel)] = "client.name" required placeholder="Nom"/>
+                    </div>
+                </div>
+                <div class="numero-input">
+                    <div class="full-width" appearance="outline">
+                        <label>Numero :</label>
+                        <input type="text" name="numero" [(ngModel)] = "client.numero" required placeholder="Numero"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="full-width" appearance="outline">
+                        <label>Mot de passe :</label>
+                        <input type="password" name="password" [(ngModel)] = "client.mdp" required placeholder="Password" />
+                        <div class="pass-error">
+                        </div>
+                    </div>
+                </div>
+                <button class="logbutton" [disabled]="f.invalid">S'inscrire</button>
+            </form>
+            <label class="danger">{{message}}</label>
+        </div>
+        <!----<label>login<a [routerLink] = "['loginUser']" routerLinkActiv="active">ici</a></label>---->
+    </div>
+</div>

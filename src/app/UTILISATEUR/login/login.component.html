@@ -1,0 +1,26 @@
+
+<head>
+	<title>LOGIN</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<div class="container">
+	<div class="login-content">
+		<form #f="ngForm" (ngSubmit)="onSubmit()" >
+			<h2 class="title">LOGIN</h2>
+			<div class="input-div one">
+				<label>NUMERO :</label>
+                <input type="text" name="numero" [(ngModel)] = "client.numero" required placeholder="Numero"/>
+			</div>
+			<div class="input-div pass">	
+				<div class="div">
+					<label>MDP :</label>
+                    <input type="password" name="password" [(ngModel)] = "client.mdp" required placeholder="Password"/>
+				</div>
+			</div>
+			<button class="logbutton" [disabled]="f.invalid">LOGIN</button>
+		</form>
+		<label>register <a [routerLink] = "['register']" routerLinkActiv="active">ici</a></label>
+        <label class="danger">{{message}}</label>
+	</div>
+</div>

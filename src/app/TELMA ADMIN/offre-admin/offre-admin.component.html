@@ -1,0 +1,14 @@
+
+
+<form class="login-form" action="javascript:void(0);">
+    <h1>CREER UNE NOUVELLE OFFRE :</h1>
+    <div class="form-input-material">
+      <input type="text" name="name_telma_offre" [(ngModel)]="name_telma_offre"  id="name_telma_offre" placeholder=" " autocomplete="off" class="form-control-material" required />
+      <label for="name_telma_offre">Nom</label>
+    </div>
+    <div class="form-input-material">
+      <input type="number" name="prix_telma_offre" [(ngModel)]="prix_telma_offre" id="prix_telma_offre" placeholder=" " autocomplete="off" class="form-control-material" required />
+      <label for="prix_telma_offre">Prix </label>
+    </div>
+    <button type="submit" (click)="ajouterOffre()" class="btn btn-primary btn-ghost">AJOUTER OFFRE</button>
+  </form>

@@ -1,0 +1,28 @@
+<body>
+    <div class="header">
+        <div class="num">
+            <label>Numero: </label><strong>num</strong>
+        </div>
+        <div class="out">
+            <a (click) = "logout()" >logout</a>
+        </div>
+    </div>
+    <div class="component">
+        <table class="tab">
+            <tr>
+                <th>NUMERO APPELE</th>
+                <th>NOM OPERATEUR</th>
+                <th>DUREE</th>
+                <th>COUT APELLE (Ariary)</th>
+                <th>DATE APPELLE </th>
+            </tr>
+            <tr *ngFor="let historique of hist">
+                <td>{{historique.numero_appele}}</td>
+                <td>{{historique.name}}</td>
+                <td>{{historique.duree}}</td>
+                <td>{{historique.cout_appel}}</td>
+                <td>{{historique.date_appel}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
